@@ -4,7 +4,3 @@ build:
   artifacts:
   - image: ash1425/react-reload
     context: .
-    sync:
-      'src/*': src
-    docker:
-      dockerfile: Dockerfile.local  
