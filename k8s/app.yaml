@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: react-ui
+spec:
+  selector:
+    matchLabels:
+      app: react-ui
+  template:
+    metadata:
+      labels:
+        app: react-ui
+    spec:
+      containers:
+      - name: react-ui
+        image: ash1425/react-reload
+        ports:
+        - containerPort: 3000
+          name: http
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: ui-service
+spec:
+  type: LoadBalancer
+  selector:
+    app: react-ui
+  ports:
+  - port: 3000
+    targetPort: http
+
