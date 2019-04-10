@@ -13,7 +13,7 @@ spec:
     spec:
       containers:
       - name: react-ui
-        image: ash1425/react-reload
+        image: ash1425/ui-app-react
         ports:
         - containerPort: 80
           name: http
